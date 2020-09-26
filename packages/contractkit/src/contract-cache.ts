@@ -15,6 +15,7 @@ import { GoldTokenWrapper } from './wrappers/GoldTokenWrapper'
 import { GovernanceWrapper } from './wrappers/Governance'
 import { LockedGoldWrapper } from './wrappers/LockedGold'
 import { MetaTransactionWalletWrapper } from './wrappers/MetaTransactionWallet'
+import { MetaTransactionWalletDeployerWrapper } from './wrappers/MetaTransactionWalletDeployer'
 import { MultiSigWrapper } from './wrappers/MultiSig'
 import { ReserveWrapper } from './wrappers/Reserve'
 import { SortedOraclesWrapper } from './wrappers/SortedOracles'
@@ -40,6 +41,7 @@ const WrapperFactories = {
   // [CeloContract.Random]: RandomWrapper,
   // [CeloContract.Registry]: RegistryWrapper,
   [CeloContract.MetaTransactionWallet]: MetaTransactionWalletWrapper,
+  [CeloContract.MetaTransactionWalletDeployer]: MetaTransactionWalletDeployerWrapper,
   [CeloContract.MultiSig]: MultiSigWrapper,
   [CeloContract.Reserve]: ReserveWrapper,
   [CeloContract.SortedOracles]: SortedOraclesWrapper,
@@ -66,6 +68,7 @@ interface WrapperCacheMap {
   [CeloContract.GoldToken]?: GoldTokenWrapper
   [CeloContract.Governance]?: GovernanceWrapper
   [CeloContract.LockedGold]?: LockedGoldWrapper
+  [CeloContract.MetaTransactionWalletDeployer]?: MetaTransactionWalletDeployerWrapper
   [CeloContract.MultiSig]?: MultiSigWrapper
   [CeloContract.MetaTransactionWallet]?: MetaTransactionWalletWrapper
   // [CeloContract.Random]?: RandomWrapper,
@@ -132,11 +135,14 @@ export class WrapperCache {
   getLockedGold() {
     return this.getContract(CeloContract.LockedGold)
   }
-  getMultiSig(address: string) {
-    return this.getContract(CeloContract.MultiSig, address)
-  }
   getMetaTransactionWallet(address: string) {
     return this.getContract(CeloContract.MetaTransactionWallet, address)
+  }
+  getMetaTransactionWalletDeployer(address: string) {
+    return this.getContract(CeloContract.MetaTransactionWalletDeployer, address)
+  }
+  getMultiSig(address: string) {
+    return this.getContract(CeloContract.MultiSig, address)
   }
   // getRegistry() {
   //   return this.getWrapper(CeloContract.Registry, newRegistry)

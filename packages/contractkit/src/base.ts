@@ -17,6 +17,7 @@ export enum CeloContract {
   Governance = 'Governance',
   LockedGold = 'LockedGold',
   MetaTransactionWallet = 'MetaTransactionWallet',
+  MetaTransactionWalletDeployer = 'MetaTransactionWalletDeployer',
   MultiSig = 'MultiSig',
   Random = 'Random',
   Registry = 'Registry',

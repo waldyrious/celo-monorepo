@@ -16,6 +16,7 @@ import { newGoldToken } from './generated/GoldToken'
 import { newGovernance } from './generated/Governance'
 import { newLockedGold } from './generated/LockedGold'
 import { newMetaTransactionWallet } from './generated/MetaTransactionWallet'
+import { newMetaTransactionWalletDeployer } from './generated/MetaTransactionWalletDeployer'
 import { newMultiSig } from './generated/MultiSig'
 import { newProxy } from './generated/Proxy'
 import { newRandom } from './generated/Random'
@@ -45,6 +46,7 @@ export const ContractFactories = {
   [CeloContract.GoldToken]: newGoldToken,
   [CeloContract.Governance]: newGovernance,
   [CeloContract.LockedGold]: newLockedGold,
+  [CeloContract.MetaTransactionWalletDeployer]: newMetaTransactionWalletDeployer,
   [CeloContract.MultiSig]: newMultiSig,
   [CeloContract.MetaTransactionWallet]: newMetaTransactionWallet,
   [CeloContract.Random]: newRandom,
@@ -115,6 +117,12 @@ export class Web3ContractCache {
   }
   getLockedGold() {
     return this.getContract(CeloContract.LockedGold)
+  }
+  getMetaTransactionWallet(address: string) {
+    return this.getContract(CeloContract.MetaTransactionWallet, address)
+  }
+  getMetaTransactionWalletDeployer(address: string) {
+    return this.getContract(CeloContract.MetaTransactionWalletDeployer, address)
   }
   getMultiSig(address: string) {
     return this.getContract(CeloContract.MultiSig, address)

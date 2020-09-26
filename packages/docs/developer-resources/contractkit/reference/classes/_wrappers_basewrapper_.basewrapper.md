@@ -40,6 +40,8 @@ Base ContractWrapper
 
   ↳ [MetaTransactionWalletWrapper](_wrappers_metatransactionwallet_.metatransactionwalletwrapper.md)
 
+  ↳ [MetaTransactionWalletDeployerWrapper](_wrappers_metatransactionwalletdeployer_.metatransactionwalletdeployerwrapper.md)
+
   ↳ [MultiSigWrapper](_wrappers_multisig_.multisigwrapper.md)
 
   ↳ [ReserveWrapper](_wrappers_reserve_.reservewrapper.md)
